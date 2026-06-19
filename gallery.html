@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Batenga Community Foundation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:    #0A0A0A;
+      --green:    #2A8B3C;
+      --green-lt: #38A84F;
+      --gold:     #F4C400;
+      --white:    #F8F5F0;
+      --gray:     #6B7280;
+    }
+    body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; line-height: 1.6; }
+    a { color: inherit; }
+    header { padding: 1.2rem 2rem; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.04); }
+    .brand { display:flex; gap:0.75rem; align-items:center; text-decoration:none; }
+    .brand .name { font-family:'Playfair Display', serif; font-weight:700; letter-spacing:0.03em; }
+    .nav-links { display:flex; gap:1rem; align-items:center; }
+    .nav-links a { font-size:0.9rem; text-transform:uppercase; padding:0.45rem 0.75rem; border-radius:3px; text-decoration:none; color:rgba(248,245,240,0.78); }
+    .nav-links a.primary { background:var(--green); color:var(--white); }
+
+    main { max-width:1100px; margin:2rem auto; padding:0 1rem; }
+    .hero { text-align:center; margin-bottom:1.4rem; }
+    .hero .label { color:var(--green-lt); text-transform:uppercase; font-weight:600; letter-spacing:0.15em; font-size:0.75rem; }
+    .hero h1 { font-family:'Playfair Display', serif; font-size:2rem; margin-top:0.6rem; }
+    .hero p { color:rgba(248,245,240,0.78); margin-top:0.8rem; max-width:760px; margin-left:auto; margin-right:auto; }
+
+    .gallery-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.9rem; margin-top:1.6rem; }
+    .gallery-item { position:relative; overflow:hidden; border-radius:6px; border:1px solid rgba(255,255,255,0.04); background:#0b0b0b; }
+    .gallery-item img { width:100%; height:100%; display:block; object-fit:cover; transition: transform 0.35s ease; }
+    .gallery-item:hover img { transform: scale(1.04); }
+    .caption { position:absolute; left:0; right:0; bottom:0; padding:0.6rem 0.8rem; background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%); color:rgba(248,245,240,0.9); font-size:0.9rem; }
+
+    .credits { margin-top:1rem; color:rgba(248,245,240,0.55); font-size:0.86rem; }
+
+    @media (max-width:600px){ .hero h1 { font-size:1.4rem; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">
+      <div class="logo" aria-hidden="true"><i class="fas fa-seedling" style="color:var(--green);font-size:1.45rem"></i></div>
+      <div>
+        <div class="name">Batenga Community Foundation</div>
+        <div style="font-size:0.75rem;color:rgba(248,245,240,0.55)">Building dignity through service</div>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="gallery.html" class="primary">Gallery</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="label">Photo Gallery</div>
+      <h1>Snapshots of our work and community</h1>
+      <p>Batenga Community Foundation has been walking alongside Uganda's most vulnerable since 2015. These images show housing projects, outreach events, youth activities, and community moments that reflect the dignity and resilience of the people we serve.</p>
+    </section>
+
+    <!-- Programs moved earlier were removed per request; link to impact on main site -->
+    <section id="programs">
+      <div class="section-inner">
+        <div class="reveal">
+          <p class="section-label">Programs</p>
+          <h2 class="section-title">Program Highlights & Impact</h2>
+          <div class="divider" style="background:var(--green);height:3px;width:48px;margin:1.2rem 0 1.8rem;"></div>
+          <p class="section-body">For full program details and measured outcomes, visit our impact section on the main site.</p>
+          <div style="margin-top:1rem">
+            <a href="index.html#impact" class="btn-primary" style="background:var(--green);color:var(--white);padding:0.7rem 1.2rem;border-radius:4px;text-decoration:none">View Impact on Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="gallery">
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- images injected by script -->
+      </div>
+
+      <script>
+        (function(){
+          const files = [
+            "image001.jpg","image002.jpg","image003.jpg","image004.jpg","image005.jpg","image006.jpg","image007.jpg","image008.jpg","image009.jpg","image010.jpg",
+            "image011.jpg","image012.jpg","image013.jpg","image014.jpg","image015.jpg","image016.jpg","image017.jpg","image018.jpg","image019.jpg","image020.jpg",
+            "image021.jpg","image022.jpg","image023.jpg","image024.jpg","image025.jpg","image026.jpg","image027.jpg","image028.jpg","image029.jpg","image030.jpg",
+            "image031.jpg","image032.jpg","image033.jpg","image034.jpg","image035.jpg","image036.jpg","image037.jpg","image038.jpg","image039.jpg","image040.jpg",
+            "image041.jpg","image042.jpg","image043.jpg","image044.jpg","image045.jpg","image046.jpg","image047.jpg","image048.jpg","image049.jpg","image050.jpg",
+            "image051.jpg","image052.jpg","image053.jpg","image054.jpg","image055.jpg","image056.jpg","image057.jpg","image058.jpg","image059.jpg","image060.jpg",
+            "image061.jpg","image062.jpg","image063.jpg","image064.jpg","image065.jpg","image066.jpg","image067.jpg","image068.jpg","image069.jpg","image070.jpg",
+            "image071.jpg","image072.jpg","image073.jpg","image074.jpg","image075.jpg","image076.jpg","image077.jpg","image078.jpg","image079.jpg","image080.jpg",
+            "image081.jpg","image082.jpg","image083.jpg","image084.jpg","image085.jpg","image086.jpg","image087.jpg","image088.jpg","image089.jpg","image090.jpg",
+            "image091.jpg","image092.jpg","image093.jpg","image094.jpg","image095.jpg","image096.jpg","image097.jpg","image098.jpg","image099.jpg","image100.jpg",
+            "image101.jpg","image102.jpg","image103.jpg","image104.jpg","image105.jpg","image106.jpg","image107.jpg","image108.jpg","image109.jpg","image110.jpg",
+            "image111.jpg","image112.jpg","image113.jpg","image114.png","image115.jpg","image116.jpg","image117.jpg","image118.jpg","image119.jpg","image120.jpg",
+            "image121.jpg","image122.jpg","image123.jpg","image124.jpg","image125.jpg","image126.jpg","image127.jpg","image128.jpg","image129.jpg","image130.jpg",
+            "image131.jpg","image132.jpg","image133.jpg","image134.jpg","image135.jpg","image136.jpg","image137.jpg","image138.jpg","image139.jpg","image140.jpg",
+            "image141.jpg","image142.jpg","image143.jpg","image144.jpg","image145.jpg","image146.jpg","image147.jpg","image148.jpg","image149.jpg","image150.jpg",
+            "image151.jpg","image152.jpg","image153.jpg"
+          ];
+
+          const grid = document.getElementById('galleryGrid');
+          files.forEach(name => {
+            const fig = document.createElement('figure');
+            fig.className = 'gallery-item';
+            const img = document.createElement('img');
+            img.src = 'images/hero/' + name;
+            img.loading = 'lazy';
+            img.alt = name.replace(/\.(jpg|png)$/i,'').replace('image','Photo ');
+            const cap = document.createElement('figcaption');
+            cap.className = 'caption';
+            cap.textContent = img.alt.replace(/Photo\s0*/,'Photo ') + ' — Click to enlarge';
+            fig.appendChild(img);
+            fig.appendChild(cap);
+            grid.appendChild(fig);
+          });
+        })();
+      </script>
+
+      <p class="credits">Captions and program descriptions drawn from the main site content. For image credits or to contribute photos, please <a href="mailto:info@batengafoundation.org">contact us</a>.</p>
+    </section>
+  </main>
+  
+  <footer style="padding:2rem;text-align:center;color:rgba(248,245,240,0.5);font-size:0.9rem">© Batenga Community Foundation — Founded 2015 • <a href="index.html">Return Home</a></footer>
+
+  <!-- Lightbox overlay -->
+  <div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;z-index:1000;padding:1.2rem">
+    <button id="lb-close" aria-label="Close" style="position:absolute;top:18px;right:22px;background:transparent;border:0;color:#fff;font-size:1.6rem;cursor:pointer">&times;</button>
+    <button id="lb-prev" aria-label="Previous" style="position:absolute;left:18px;top:50%;transform:translateY(-50%);background:transparent;border:0;color:#fff;font-size:2rem;cursor:pointer">&#10094;</button>
+    <button id="lb-next" aria-label="Next" style="position:absolute;right:18px;top:50%;transform:translateY(-50%);background:transparent;border:0;color:#fff;font-size:2rem;cursor:pointer">&#10095;</button>
+    <div id="lb-content" style="max-width:1100px;max-height:90vh;display:flex;flex-direction:column;align-items:center;gap:0.6rem">
+      <img id="lb-image" src="" alt="" style="max-width:100%;max-height:82vh;object-fit:contain;border-radius:6px;" />
+      <div id="lb-caption" style="color:rgba(255,255,255,0.9);font-size:0.95rem;text-align:center;max-width:960px"></div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const items = Array.from(document.querySelectorAll('.gallery-item img'));
+      const lightbox = document.getElementById('lightbox');
+      const lbImage = document.getElementById('lb-image');
+      const lbCaption = document.getElementById('lb-caption');
+      const lbClose = document.getElementById('lb-close');
+      const lbNext = document.getElementById('lb-next');
+      const lbPrev = document.getElementById('lb-prev');
+      let index = 0;
+
+      function openAt(i){
+        const img = items[i];
+        if(!img) return;
+        lbImage.src = img.src;
+        lbImage.alt = img.alt || '';
+        lbCaption.textContent = img.parentElement.querySelector('.caption')?.textContent || '';
+        index = i;
+        lightbox.style.display = 'flex';
+      }
+
+      function close(){ lightbox.style.display = 'none'; }
+      function next(){ openAt((index + 1) % items.length); }
+      function prev(){ openAt((index - 1 + items.length) % items.length); }
+
+      items.forEach((img,i)=> img.addEventListener('click', ()=> openAt(i)));
+      lbClose.addEventListener('click', close);
+      lbNext.addEventListener('click', next);
+      lbPrev.addEventListener('click', prev);
+      lightbox.addEventListener('click', (e)=> { if(e.target === lightbox) close(); });
+      document.addEventListener('keydown', (e)=> { if(e.key === 'Escape') close(); if(e.key === 'ArrowRight') next(); if(e.key === 'ArrowLeft') prev(); });
+    })();
+  </script>
+</body>
+</html>
