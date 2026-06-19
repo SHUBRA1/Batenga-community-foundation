@@ -9,7 +9,7 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --black:    #0A0A0A;
+      --black:    #080808;
       --green:    #2A8B3C;
       --green-lt: #38A84F;
       --gold:     #F4C400;
@@ -35,6 +35,8 @@
     .gallery-item { position:relative; overflow:hidden; border-radius:6px; border:1px solid rgba(255,255,255,0.04); background:#0b0b0b; }
     .gallery-item img { width:100%; height:100%; display:block; object-fit:cover; transition: transform 0.35s ease; }
     .gallery-item:hover img { transform: scale(1.04); }
+    /* Standard gallery layout (non full-bleed) */
+    /* uses grid gaps and rounded tiles */
     .caption { position:absolute; left:0; right:0; bottom:0; padding:0.6rem 0.8rem; background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%); color:rgba(248,245,240,0.9); font-size:0.9rem; }
 
     .credits { margin-top:1rem; color:rgba(248,245,240,0.55); font-size:0.86rem; }
@@ -53,6 +55,7 @@
     </a>
     <nav class="nav-links">
       <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
       <a href="gallery.html" class="primary">Gallery</a>
     </nav>
   </header>

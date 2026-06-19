@@ -8,16 +8,39 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="nav.css" />
   <style>
-    :root{--black:#0A0A0A;--white:#F8F5F0;--green:#2A8B3C}
+    :root{--black:#080606;--white:#dfdedd;--green:#2A8B3C}
     body{background:var(--black);color:var(--white);font-family:Inter,system-ui,Segoe UI,Arial;padding:1.2rem;margin:0}
     .wrap{max-width:980px;margin:2rem auto}
     header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.6rem}
     .brand{display:flex;gap:.6rem;align-items:center;text-decoration:none;color:var(--white)}
     .brand .name{font-family:'Playfair Display',serif;font-weight:700}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-    .card{background:#0f0f0f;border:1px solid rgba(255,255,255,0.04);padding:1rem;border-radius:6px}
+    .card{background:#110b0b;border:1px solid rgba(39, 17, 17, 0.04);padding:1rem;border-radius:6px}
     a.btn{display:inline-block;padding:.6rem 1rem;background:var(--green);color:#fff;border-radius:4px;text-decoration:none}
-    .social a{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .6rem;margin-right:.4rem;border-radius:4px;background:rgba(255,255,255,0.03);text-decoration:none;color:var(--white)}
+    .social{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+    .social a{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .6rem;border-radius:4px;background:rgba(255,255,255,0.03);text-decoration:none;color:var(--white)}
+    /* Brand colors for social icons */
+    .social a i{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px}
+    .social a i.fa-youtube{color:#FF0000}
+    .social a i.fa-facebook-f{color:#1877F2}
+    .social a i.fa-x-twitter{color:#000000}
+    /* Instagram uses pink on white to resemble the logo */
+    .social a i.fa-instagram{color:#E1306C;background:#ffffff;border-radius:4px;padding:3px}
+    /* Quick contact logos */
+    .contact-logos{display:block;margin-bottom:1rem}
+    .contact-logos .list{display:flex;gap:.8rem;flex-wrap:wrap}
+    .contact-logos .item{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:120px;padding:.6rem;border-radius:8px;background:rgba(255,255,255,0.02);text-decoration:none;color:inherit;border:1px solid rgba(255,255,255,0.03)}
+    .contact-logos .icon{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.03);margin-bottom:0.4rem;font-size:20px}
+    .contact-logos .item .label{font-size:0.9rem}
+    .contact-logos .item:hover{transform:translateY(-4px);transition:transform .12s ease}
+    .contact-logos .email .icon{background:#3b82f6;color:#fff}
+    .contact-logos .phone .icon{background:#06b6d4;color:#fff}
+    .contact-logos .whatsapp .icon{background:#25d366;color:#fff}
+    .contact-logos .map .icon{background:#ef4444;color:#fff}
+    .contact-logos .donate .icon{background:var(--green);color:#fff}
+    /* Highlighted section headings */
+    .highlight-title{font-family:'Playfair Display',serif;font-weight:800;font-size:1.35rem;color:var(--green);letter-spacing:0.2px;margin-bottom:0.5rem}
+    @media(max-width:780px){.highlight-title{font-size:1.15rem}}
     @media(max-width:780px){.grid{grid-template-columns:1fr}}
   </style>
 </head>
@@ -27,15 +50,47 @@
       <a class="brand" href="index.html"><i class="fas fa-seedling" style="color:var(--green)"></i><div><div class="name">Batenga Community Foundation</div><div style="font-size:0.9rem;color:rgba(255,255,255,0.6)">Contact & Support</div></div></a>
       <div id="site-nav" aria-hidden="false"></div>
       <nav>
-        <a class="btn" href="mailto:info@batengafoundation.org">Email Us</a>
+        <ul class="nav-links" style="display:flex;gap:1rem;align-items:center;list-style:none;margin:0;padding:0">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
       </nav>
     </header>
     <script src="nav-loader.js" defer></script>
 
     <main>
+      <!-- Quick contact logos for easy identification -->
+      <section class="card contact-logos" aria-label="Quick contact options">
+        <div class="list">
+          <a class="item email" href="mailto:info@batengafoundation.org" aria-label="Email Batenga Community Foundation">
+            <div class="icon"><i class="fas fa-envelope"></i></div>
+            <div class="label">Email</div>
+          </a>
+
+          <a class="item phone" href="tel:+256704177150" aria-label="Call Batenga Community Foundation">
+            <div class="icon"><i class="fas fa-phone"></i></div>
+            <div class="label">Call</div>
+          </a>
+
+          <a class="item whatsapp" href="https://wa.me/256704177150" target="_blank" rel="noopener" aria-label="Message on WhatsApp">
+            <div class="icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="label">WhatsApp</div>
+          </a>
+
+          <a class="item map" href="https://www.google.com/maps/search/?api=1&query=Nansana+East+Nansana+Uganda" target="_blank" rel="noopener" aria-label="View office on map">
+            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="label">Visit</div>
+          </a>
+
+          <a class="item donate" href="#donations" aria-label="See donation channels">
+            <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <div class="label">Donate</div>
+          </a>
+        </div>
+      </section>
       <section class="grid">
         <div class="card">
-          <h3 id="email">Email</h3>
+          <h3 id="email" class="highlight-title">EMAIL</h3>
           <p><a href="mailto:info@batengafoundation.org" style="color:inherit;text-decoration:underline">info@batengafoundation.org</a></p>
 
           <h3 id="phone" style="margin-top:1rem">Phone & WhatsApp</h3>
@@ -44,7 +99,7 @@
         </div>
 
         <div class="card">
-          <h3 id="address">Office</h3>
+          <h3 id="address" class="highlight-title">OFFICES</h3>
           <p>Nansana East II, Nansana Town Council, Wakiso District, Uganda</p>
 
           <h3 id="social" style="margin-top:1rem">Social</h3>
@@ -58,7 +113,7 @@
       </section>
 
       <section style="margin-top:1.2rem" class="card">
-        <h3 id="donations">Donation Channels</h3>
+        <h3 id="donations" class="highlight-title">DONATION CHANNELS</h3>
         <p><strong>Bank transfer</strong><br>Account Name: Batenga Community Foundation<br>Bank: Diamond Trust Bank<br>Account Number: 5211932932<br>Sort Code: 190147<br>Swift: DTKEUGKA</p>
         <p style="margin-top:0.6rem"><strong>Mobile Money</strong><br>Airtel Merchant Code: 6009145<br>Phone (Merchant): <a href="tel:+256704177150" style="color:inherit;text-decoration:underline">+256 704 177 150</a><br>Reference: Use "Donation" or your name</p>
         <p style="margin-top:0.6rem;color:rgba(255,255,255,0.8)">If you need confirmation or a receipt after donating, message us on WhatsApp or email the transaction details to <a href="mailto:info@batengafoundation.org">info@batengafoundation.org</a>.</p>

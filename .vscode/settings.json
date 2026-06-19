@@ -1,0 +1,6 @@
+{
+  "terminal.integrated.windowsUseConptyDll": true,
+  "terminal.integrated.windowsEnableConpty": true,
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "terminal.external.windowsExec": "C:\\Windows\\System32\\cmd.exe"
+}
