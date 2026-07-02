@@ -71,7 +71,7 @@ const formatDate = (date: Date) => {
                     <span>By {featuredPost.data.author}</span>
                   </div>
                   <h2 class="font-serif font-black text-xl md:text-2xl text-white mb-4 group-hover:text-[#38A84F] transition-colors duration-250 leading-snug">
-                    <a href={`/blog/${featuredPost.id}`} class="no-underline text-inherit">
+                    <a href={`${import.meta.env.BASE_URL}blog/${featuredPost.id}`} class="no-underline text-inherit">
                       {featuredPost.data.title}
                     </a>
                   </h2>
@@ -80,7 +80,7 @@ const formatDate = (date: Date) => {
                   </p>
                 </div>
                 <div>
-                  <a href={`/blog/${featuredPost.id}`} class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#38A84F] hover:text-[#2A8B3C] no-underline transition-colors">
+                  <a href={`${import.meta.env.BASE_URL}blog/${featuredPost.id}`} class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#38A84F] hover:text-[#2A8B3C] no-underline transition-colors">
                     Read Article <i class="fas fa-arrow-right text-[10px]"></i>
                   </a>
                 </div>
@@ -135,7 +135,7 @@ const formatDate = (date: Date) => {
                     <span>By {post.data.author}</span>
                   </div>
                   <h3 class="post-title font-serif font-bold text-lg text-white mb-3 group-hover:text-[#38A84F] transition-colors duration-250 leading-snug">
-                    <a href={`/blog/${post.id}`} class="no-underline text-inherit">
+                    <a href={`${import.meta.env.BASE_URL}blog/${post.id}`} class="no-underline text-inherit">
                       {post.data.title}
                     </a>
                   </h3>
@@ -144,7 +144,7 @@ const formatDate = (date: Date) => {
                   </p>
                 </div>
                 <div class="px-8 pb-8">
-                  <a href={`/blog/${post.id}`} class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#38A84F] hover:text-[#2A8B3C] no-underline transition-colors">
+                  <a href={`${import.meta.env.BASE_URL}blog/${post.id}`} class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#38A84F] hover:text-[#2A8B3C] no-underline transition-colors">
                     Read Article <i class="fas fa-arrow-right text-[10px]"></i>
                   </a>
                 </div>
