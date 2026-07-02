@@ -27,7 +27,7 @@ const formatDate = (date: Date) => {
   <main class="max-w-[800px] mx-auto mt-28 px-4 pb-20">
     <!-- Back to Blog Button -->
     <div class="mb-8">
-      <a href="/blog" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/55 hover:text-[#38A84F] no-underline transition-colors duration-200">
+      <a href={`${import.meta.env.BASE_URL}blog`} class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/55 hover:text-[#38A84F] no-underline transition-colors duration-200">
         <i class="fas fa-arrow-left text-[10px]"></i> Back to Blog
       </a>
     </div>

@@ -2,8 +2,8 @@
 const { activePage } = Astro.props;
 ---
 <nav class="fixed top-[5px] w-full z-[100] bg-[#0A0A0A]/92 backdrop-blur-[12px] border-b border-[#2A8B3C]/25 px-5 md:px-10 flex items-center justify-between h-[68px]">
-  <a class="flex items-center gap-3 no-underline" href="/">
-    <img src="/logo.png" alt="BCF Logo" class="h-10 w-auto" />
+  <a class="flex items-center gap-3 no-underline" href={import.meta.env.BASE_URL}>
+    <img src={`${import.meta.env.BASE_URL}logo.png`} alt="BCF Logo" class="h-10 w-auto" />
     <div class="flex flex-col leading-[1.1]">
       <span class="font-serif text-[0.9rem] font-bold text-[#F8F5F0] tracking-[0.03em]">Batenga Community Foundation</span>
       <span class="text-[0.65rem] font-medium text-[#38A84F] tracking-[0.18em] uppercase mt-[2px]">Serving Uganda Since 2015</span>
@@ -12,12 +12,12 @@ const { activePage } = Astro.props;
   
   <!-- Desktop Links -->
   <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0">
-    <li><a href="/about" class={`text-[0.82rem] font-medium tracking-[0.06em] uppercase no-underline transition-colors duration-250 ${activePage === 'about' ? 'text-[#38A84F]' : 'text-[#F8F5F0]/75 hover:text-[#38A84F]'}`}>About</a></li>
-    <li><a href="/programs" class={`text-[0.82rem] font-medium tracking-[0.06em] uppercase no-underline transition-colors duration-250 ${activePage === 'programs' ? 'text-[#38A84F]' : 'text-[#F8F5F0]/75 hover:text-[#38A84F]'}`}>Programs</a></li>
-    <li><a href="/blog" class={`text-[0.82rem] font-medium tracking-[0.06em] uppercase no-underline transition-colors duration-250 ${activePage === 'blog' ? 'text-[#38A84F]' : 'text-[#F8F5F0]/75 hover:text-[#38A84F]'}`}>Blog</a></li>
-    <li><a href="/gallery" class={`text-[0.82rem] font-medium tracking-[0.06em] uppercase no-underline transition-colors duration-250 ${activePage === 'gallery' ? 'text-[#38A84F]' : 'text-[#F8F5F0]/75 hover:text-[#38A84F]'}`}>Gallery</a></li>
-    <li><a href="/contact" class={`text-[0.82rem] font-medium tracking-[0.06em] uppercase no-underline transition-colors duration-250 ${activePage === 'contact' ? 'text-[#38A84F]' : 'text-[#F8F5F0]/75 hover:text-[#38A84F]'}`}>Contact</a></li>
-    <li><a href="/donate" class={`bg-[#2A8B3C] text-[#F8F5F0] px-[1.2rem] py-[0.5rem] rounded-[3px] text-[0.82rem] font-medium tracking-[0.06em] uppercase no-underline transition-colors duration-250 hover:bg-[#38A84F] ${activePage === 'donate' ? 'ring-2 ring-[#38A84F]' : ''}`}>Donate</a></li>
+    <li><a href={`${import.meta.env.BASE_URL}about`} class={`text-[0.82rem] font-medium tracking-[0.06em] uppercase no-underline transition-colors duration-250 ${activePage === 'about' ? 'text-[#38A84F]' : 'text-[#F8F5F0]/75 hover:text-[#38A84F]'}`}>About</a></li>
+    <li><a href={`${import.meta.env.BASE_URL}programs`} class={`text-[0.82rem] font-medium tracking-[0.06em] uppercase no-underline transition-colors duration-250 ${activePage === 'programs' ? 'text-[#38A84F]' : 'text-[#F8F5F0]/75 hover:text-[#38A84F]'}`}>Programs</a></li>
+    <li><a href={`${import.meta.env.BASE_URL}blog`} class={`text-[0.82rem] font-medium tracking-[0.06em] uppercase no-underline transition-colors duration-250 ${activePage === 'blog' ? 'text-[#38A84F]' : 'text-[#F8F5F0]/75 hover:text-[#38A84F]'}`}>Blog</a></li>
+    <li><a href={`${import.meta.env.BASE_URL}gallery`} class={`text-[0.82rem] font-medium tracking-[0.06em] uppercase no-underline transition-colors duration-250 ${activePage === 'gallery' ? 'text-[#38A84F]' : 'text-[#F8F5F0]/75 hover:text-[#38A84F]'}`}>Gallery</a></li>
+    <li><a href={`${import.meta.env.BASE_URL}contact`} class={`text-[0.82rem] font-medium tracking-[0.06em] uppercase no-underline transition-colors duration-250 ${activePage === 'contact' ? 'text-[#38A84F]' : 'text-[#F8F5F0]/75 hover:text-[#38A84F]'}`}>Contact</a></li>
+    <li><a href={`${import.meta.env.BASE_URL}donate`} class={`bg-[#2A8B3C] text-[#F8F5F0] px-[1.2rem] py-[0.5rem] rounded-[3px] text-[0.82rem] font-medium tracking-[0.06em] uppercase no-underline transition-colors duration-250 hover:bg-[#38A84F] ${activePage === 'donate' ? 'ring-2 ring-[#38A84F]' : ''}`}>Donate</a></li>
   </ul>
 
   <!-- Mobile Hamburger -->
@@ -29,12 +29,12 @@ const { activePage } = Astro.props;
 <!-- Mobile Navigation overlay -->
 <div id="mobile-nav-menu" class="hidden fixed inset-0 bg-[#0A0A0A]/95 z-[90] flex flex-col items-center justify-center gap-6">
   <ul class="flex flex-col items-center gap-6 list-none text-lg m-0 p-0">
-    <li><a href="/about" class={`mobile-link uppercase tracking-wider no-underline font-medium ${activePage === 'about' ? 'text-[#38A84F]' : 'text-[#F8F5F0]'}`}>About</a></li>
-    <li><a href="/programs" class={`mobile-link uppercase tracking-wider no-underline font-medium ${activePage === 'programs' ? 'text-[#38A84F]' : 'text-[#F8F5F0]'}`}>Programs</a></li>
-    <li><a href="/blog" class={`mobile-link uppercase tracking-wider no-underline font-medium ${activePage === 'blog' ? 'text-[#38A84F]' : 'text-[#F8F5F0]'}`}>Blog</a></li>
-    <li><a href="/gallery" class={`mobile-link uppercase tracking-wider no-underline font-medium ${activePage === 'gallery' ? 'text-[#38A84F]' : 'text-[#F8F5F0]'}`}>Gallery</a></li>
-    <li><a href="/contact" class={`mobile-link uppercase tracking-wider no-underline font-medium ${activePage === 'contact' ? 'text-[#38A84F]' : 'text-[#F8F5F0]'}`}>Contact</a></li>
-    <li><a href="/donate" class="mobile-link bg-[#2A8B3C] text-[#F8F5F0] px-6 py-2 rounded uppercase tracking-wider no-underline font-medium">Donate</a></li>
+    <li><a href={`${import.meta.env.BASE_URL}about`} class={`mobile-link uppercase tracking-wider no-underline font-medium ${activePage === 'about' ? 'text-[#38A84F]' : 'text-[#F8F5F0]'}`}>About</a></li>
+    <li><a href={`${import.meta.env.BASE_URL}programs`} class={`mobile-link uppercase tracking-wider no-underline font-medium ${activePage === 'programs' ? 'text-[#38A84F]' : 'text-[#F8F5F0]'}`}>Programs</a></li>
+    <li><a href={`${import.meta.env.BASE_URL}blog`} class={`mobile-link uppercase tracking-wider no-underline font-medium ${activePage === 'blog' ? 'text-[#38A84F]' : 'text-[#F8F5F0]'}`}>Blog</a></li>
+    <li><a href={`${import.meta.env.BASE_URL}gallery`} class={`mobile-link uppercase tracking-wider no-underline font-medium ${activePage === 'gallery' ? 'text-[#38A84F]' : 'text-[#F8F5F0]'}`}>Gallery</a></li>
+    <li><a href={`${import.meta.env.BASE_URL}contact`} class={`mobile-link uppercase tracking-wider no-underline font-medium ${activePage === 'contact' ? 'text-[#38A84F]' : 'text-[#F8F5F0]'}`}>Contact</a></li>
+    <li><a href={`${import.meta.env.BASE_URL}donate`} class="mobile-link bg-[#2A8B3C] text-[#F8F5F0] px-6 py-2 rounded uppercase tracking-wider no-underline font-medium">Donate</a></li>
   </ul>
 </div>
 

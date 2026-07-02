@@ -27,10 +27,10 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Action Buttons -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="/" class="w-full sm:w-auto bg-[#2A8B3C] text-[#F8F5F0] hover:bg-[#38A84F] hover:-translate-y-[2px] transition-all px-8 py-3 rounded-[3px] text-xs font-bold tracking-[0.08em] uppercase no-underline shadow-lg shadow-[#2A8B3C]/15">
+        <a href={import.meta.env.BASE_URL} class="w-full sm:w-auto bg-[#2A8B3C] text-[#F8F5F0] hover:bg-[#38A84F] hover:-translate-y-[2px] transition-all px-8 py-3 rounded-[3px] text-xs font-bold tracking-[0.08em] uppercase no-underline shadow-lg shadow-[#2A8B3C]/15">
           Go Back Home
         </a>
-        <a href="/programs" class="w-full sm:w-auto border border-white/20 text-white hover:border-[#38A84F] hover:text-[#38A84F] hover:-translate-y-[2px] transition-all px-8 py-3 rounded-[3px] text-xs font-bold tracking-[0.08em] uppercase no-underline backdrop-blur-sm">
+        <a href={`${import.meta.env.BASE_URL}programs`} class="w-full sm:w-auto border border-white/20 text-white hover:border-[#38A84F] hover:text-[#38A84F] hover:-translate-y-[2px] transition-all px-8 py-3 rounded-[3px] text-xs font-bold tracking-[0.08em] uppercase no-underline backdrop-blur-sm">
           Our Programs
         </a>
       </div>
