@@ -1,0 +1,399 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+// Import local optimized high-res hero images
+import hero1 from '../assets/images/hero/image001.jpg';
+import hero2 from '../assets/images/hero/image003.jpg';
+import hero3 from '../assets/images/hero/image013.jpg';
+import hero4 from '../assets/images/hero/image021.jpg';
+import hero5 from '../assets/images/hero/image078.jpg';
+import hero6 from '../assets/images/hero/image098.jpg';
+---
+
+<Layout title="Batenga Community Foundation — Restoring Dignity. Rebuilding Hope." activePage="home">
+  <!-- Hero Section -->
+  <header id="hero" class="relative h-screen h-dvh flex flex-col items-center justify-center text-center px-4 overflow-hidden bg-[#0A0A0A]">
+    <!-- Static Top Branding (Always Visible) -->
+    <div class="absolute top-16 left-0 right-0 z-20 flex flex-col items-center pointer-events-none select-none animate-fade-up">
+      <img src="/logo.png" alt="Batenga Community Foundation Logo" class="w-16 md:w-20 h-auto mb-2 pointer-events-auto" />
+      <span class="text-[#38A84F] text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase">Batenga Community Foundation</span>
+    </div>
+
+    <!-- Swiper Hero Slider Container -->
+    <div class="swiper hero-slider absolute inset-0 w-full h-full z-0">
+      <div class="swiper-wrapper">
+        
+        <!-- Slide 1 -->
+        <div class="swiper-slide w-full h-full relative">
+          <Image src={hero1} alt="BCF Community Outreach Uganda" class="w-full h-full object-cover brightness-[0.3]" />
+          <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center z-10 pt-20 pb-28">
+            <h1 class="font-serif font-black text-4xl md:text-6xl text-white leading-[1.15] max-w-[800px] mb-4">
+              Restoring Dignity. <br />
+              <span class="text-[#F4C400]">Rebuilding Hope.</span>
+            </h1>
+            <p class="text-white/80 text-sm md:text-base max-w-[560px] leading-relaxed">
+              Serving widows, orphans, and vulnerable communities across Uganda since 2015.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide w-full h-full relative">
+          <Image src={hero2} alt="BCF Orphan School Children Uganda" class="w-full h-full object-cover brightness-[0.3]" />
+          <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center z-10 pt-20 pb-28">
+            <h2 class="font-serif font-black text-4xl md:text-6xl text-white leading-[1.15] max-w-[800px] mb-4">
+              Empowering Orphans <br />
+              <span class="text-[#F4C400]">Through Education</span>
+            </h2>
+            <p class="text-white/80 text-sm md:text-base max-w-[560px] leading-relaxed">
+              Supporting primary and secondary school children with full sponsorships to build their self-reliant futures.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide w-full h-full relative">
+          <Image src={hero3} alt="BCF Widows Housing Project" class="w-full h-full object-cover brightness-[0.3]" />
+          <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center z-10 pt-20 pb-28">
+            <h2 class="font-serif font-black text-4xl md:text-6xl text-white leading-[1.15] max-w-[800px] mb-4">
+              Safe Shelters <br />
+              <span class="text-[#F4C400]">For Vulnerable Families</span>
+            </h2>
+            <p class="text-white/80 text-sm md:text-base max-w-[560px] leading-relaxed">
+              We have constructed over 40 homes across Kyankwanzi and Buikwe Districts to provide safety and shelter.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide w-full h-full relative">
+          <Image src={hero4} alt="BCF Clean Water Project Uganda" class="w-full h-full object-cover brightness-[0.3]" />
+          <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center z-10 pt-20 pb-28">
+            <h2 class="font-serif font-black text-4xl md:text-6xl text-white leading-[1.15] max-w-[800px] mb-4">
+              Clean Water, <br />
+               <span class="text-[#F4C400]">Healthy Communities</span>
+            </h2>
+            <p class="text-white/80 text-sm md:text-base max-w-[560px] leading-relaxed">
+              Providing boreholes and solar-managed water sources to communities facing severe water scarcity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="swiper-slide w-full h-full relative">
+          <Image src={hero5} alt="BCF Konooweka Youth Program" class="w-full h-full object-cover brightness-[0.3]" />
+          <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center z-10 pt-20 pb-28">
+            <h2 class="font-serif font-black text-4xl md:text-6xl text-white leading-[1.15] max-w-[800px] mb-4">
+              Konooweka <br />
+              <span class="text-[#F4C400]">Youth Program</span>
+            </h2>
+            <p class="text-white/80 text-sm md:text-base max-w-[560px] leading-relaxed">
+              Channeling the energy and potential of Ugandan youth into active community transformation and skills training.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="swiper-slide w-full h-full relative">
+          <Image src={hero6} alt="BCF Immediate Food Relief & Outreaches" class="w-full h-full object-cover brightness-[0.3]" />
+          <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center z-10 pt-20 pb-28">
+            <h2 class="font-serif font-black text-4xl md:text-6xl text-white leading-[1.15] max-w-[800px] mb-4">
+              Immediate Food Relief <br />
+              <span class="text-[#F4C400]">& Outreaches</span>
+            </h2>
+            <p class="text-white/80 text-sm md:text-base max-w-[560px] leading-relaxed">
+              Delivering essential nutrition packages to expecting mothers, the elderly, and disadvantaged families.
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <!-- Slider pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Dark gradient overlays for readability and premium feel -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/60 via-[#0A0A0A]/40 to-[#0A0A0A] z-[1] pointer-events-none"></div>
+    
+    <!-- Hero Slider Controls -->
+    <div class="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-between px-4 z-20 pointer-events-none">
+      <button class="hero-slider-prev w-12 h-12 rounded-full border border-white/20 bg-black/40 hover:bg-[#2A8B3C] hover:border-[#2A8B3C] text-white flex items-center justify-center cursor-pointer pointer-events-auto transition-all duration-200">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="hero-slider-next w-12 h-12 rounded-full border border-white/20 bg-black/40 hover:bg-[#2A8B3C] hover:border-[#2A8B3C] text-white flex items-center justify-center cursor-pointer pointer-events-auto transition-all duration-200">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <!-- Static Bottom Actions (Always Visible) -->
+    <div class="absolute bottom-16 left-0 right-0 z-20 flex flex-col items-center pointer-events-none select-none animate-fade-up animation-delay-300">
+      <div class="flex gap-4 flex-wrap justify-center mb-6 pointer-events-auto">
+        <a href="/programs" class="bg-[#2A8B3C] text-[#F8F5F0] hover:bg-[#38A84F] hover:-translate-y-[2px] transition-all px-8 py-3.5 rounded-[3px] text-xs font-bold tracking-[0.08em] uppercase no-underline shadow-lg shadow-[#2A8B3C]/10">Our Programs</a>
+        <a href="/donate" class="border border-white/30 text-white hover:border-[#38A84F] hover:text-[#38A84F] hover:-translate-y-[2px] transition-all px-8 py-3.5 rounded-[3px] text-xs font-bold tracking-[0.08em] uppercase no-underline backdrop-blur-sm">Make a Donation</a>
+      </div>
+
+      <div class="scroll-cue flex flex-col items-center gap-2 opacity-50 text-[10px] tracking-[0.15em] uppercase animate-bounce">
+        <span>Scroll to Explore</span>
+        <i class="fas fa-chevron-down text-xs"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats Band -->
+  <section class="bg-[#1A5C27] border-y border-[#2A8B3C]/35 py-12 px-6">
+    <div class="max-w-[1080px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center stats-inner">
+      <div class="stat-item">
+        <span class="font-serif font-black text-4xl md:text-5xl text-white block leading-none">
+          <span class="count" data-target="40">0</span><span class="text-[#F4C400]">+</span>
+        </span>
+        <span class="text-white/75 text-[10px] md:text-xs font-medium tracking-wider uppercase mt-2 block">Homes Built for Widows</span>
+      </div>
+      <div class="stat-item">
+        <span class="font-serif font-black text-4xl md:text-5xl text-white block leading-none">
+          <span class="count" data-target="40">0</span><span class="text-[#F4C400]">+</span>
+        </span>
+        <span class="text-white/75 text-[10px] md:text-xs font-medium tracking-wider uppercase mt-2 block">Orphans Supported</span>
+      </div>
+      <div class="stat-item">
+        <span class="font-serif font-black text-4xl md:text-5xl text-white block leading-none">
+          <span class="count" data-target="2">0</span>
+        </span>
+        <span class="text-white/75 text-[10px] md:text-xs font-medium tracking-wider uppercase mt-2 block">Districts Reached</span>
+      </div>
+      <div class="stat-item">
+        <span class="font-serif font-black text-4xl md:text-5xl text-white block leading-none">
+          <span class="count" data-target="9">0</span><span class="text-[#F4C400]">+</span>
+        </span>
+        <span class="text-white/75 text-[10px] md:text-xs font-medium tracking-wider uppercase mt-2 block">Years of Service</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Teaser Section -->
+  <section id="about" class="bg-[#111] py-24 px-6 border-b border-white/5">
+    <div class="max-w-[1080px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <span class="text-[#38A84F] text-xs font-bold tracking-[0.2em] uppercase block mb-2">About BCF</span>
+        <h2 class="font-serif font-black text-3xl md:text-4.5xl text-white leading-tight">A Foundation Built on Faith and Community</h2>
+        <div class="w-12 h-1 bg-[#2A8B3C] my-6"></div>
+        <p class="text-white/70 text-sm md:text-base leading-relaxed mb-6">
+          Batenga Community Foundation has been walking alongside Uganda's most vulnerable since 2015. We focus on widows and orphans, providing not just material support but a path to lasting dignity through housing, education, and skills training.
+        </p>
+        <a href="/about" class="inline-flex items-center gap-2 bg-[#2A8B3C] text-white hover:bg-[#38A84F] px-8 py-3.5 rounded-[3px] text-xs font-bold uppercase tracking-wider no-underline shadow-lg shadow-[#2A8B3C]/10 transition-colors duration-200">
+          Read Our Story <i class="fas fa-arrow-right text-[10px]"></i>
+        </a>
+      </div>
+
+      <div class="reveal relative">
+        <div class="absolute -inset-1 bg-gradient-to-tr from-[#2A8B3C] to-[#F4C400] rounded-md blur opacity-25"></div>
+        <div class="relative bg-black/40 border border-white/5 p-8 rounded-md backdrop-blur-md">
+          <blockquote class="font-serif italic text-white/90 text-base md:text-lg leading-relaxed">
+            "A world where every citizen possesses the knowledge, skills, and civic competencies to contribute to the creation and maintenance of balanced and compatible societies."
+          </blockquote>
+          <cite class="block text-[#F4C400] text-xs tracking-wider uppercase font-semibold mt-4 not-italic">BCF Vision Statement</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Teaser Section -->
+  <section id="programs" class="bg-[#0A0A0A] py-24 px-6 border-b border-white/5">
+    <div class="max-w-[1080px] mx-auto">
+      <div class="text-center max-w-[640px] mx-auto mb-16 reveal">
+        <span class="text-[#38A84F] text-xs font-bold tracking-[0.2em] uppercase block mb-2">Our Initiatives</span>
+        <h2 class="font-serif font-black text-3xl md:text-4.5xl text-white leading-tight">Focusing on Long-Term Impact</h2>
+        <div class="w-12 h-1 bg-[#2A8B3C] mx-auto my-6"></div>
+        <p class="text-white/70 text-sm md:text-base leading-relaxed">
+          Our programs target direct, tangible needs. We focus on creating sustainable change through housing, education, and community outreach.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <!-- Shelter Teaser -->
+        <div class="bg-[#111] border border-white/5 p-8 rounded-md reveal">
+          <div class="w-10 h-10 rounded bg-[#2A8B3C]/10 flex items-center justify-center mb-6">
+            <i class="fas fa-house-chimney text-[#38A84F] text-lg"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-white mb-3">Widows Housing</h3>
+          <p class="text-white/60 text-xs md:text-sm leading-relaxed mb-4">
+            Building permanent brick-and-mortar homes for vulnerable widows and their families to restore dignity and safety.
+          </p>
+        </div>
+
+        <!-- Education Teaser -->
+        <div class="bg-[#111] border border-white/5 p-8 rounded-md reveal">
+          <div class="w-10 h-10 rounded bg-[#2A8B3C]/10 flex items-center justify-center mb-6">
+            <i class="fas fa-graduation-cap text-[#38A84F] text-lg"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-white mb-3">Orphan Sponsorship</h3>
+          <p class="text-white/60 text-xs md:text-sm leading-relaxed mb-4">
+            Providing fees, materials, uniforms, and mentorship to orphaned children to secure their education and futures.
+          </p>
+        </div>
+
+        <!-- Youth Teaser -->
+        <div class="bg-[#111] border border-white/5 p-8 rounded-md reveal">
+          <div class="w-10 h-10 rounded bg-[#2A8B3C]/10 flex items-center justify-center mb-6">
+            <i class="fas fa-people-group text-[#38A84F] text-lg"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-white mb-3">Youth Arm</h3>
+          <p class="text-white/60 text-xs md:text-sm leading-relaxed mb-4">
+            Empowering youth through the Konooweka program to build skills, civic capability, and lead community action.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center reveal">
+        <a href="/programs" class="inline-flex items-center gap-2 border border-white/20 hover:border-[#38A84F] hover:text-[#38A84F] text-white px-8 py-3.5 rounded-[3px] text-xs font-bold uppercase tracking-wider no-underline transition-all duration-200">
+          View All Programs <i class="fas fa-arrow-right text-[10px]"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donate Call to Action Section -->
+  <section id="donate-cta" class="bg-gradient-to-br from-[#1A5C27] to-[#0f3d1a] py-24 px-6 border-b border-white/5 reveal">
+    <div class="max-w-[800px] mx-auto text-center">
+      <span class="text-[#F4C400] text-xs font-bold tracking-[0.2em] uppercase block mb-2">Partner With Us</span>
+      <h2 class="font-serif font-black text-3xl md:text-5xl text-white leading-tight">Ready to Make a Difference?</h2>
+      <p class="text-white/80 text-sm md:text-base leading-relaxed mt-6 max-w-[600px] mx-auto">
+        Your support goes directly to project implementation in rural Uganda. Join us today in restoring dignity and rebuilding hope.
+      </p>
+      <div class="mt-8">
+        <a href="/donate" class="inline-flex items-center gap-2 bg-[#F4C400] text-[#0A0A0A] hover:bg-[#ffcf00] px-8 py-3.5 rounded-[3px] text-xs font-bold uppercase tracking-wider no-underline shadow-lg shadow-[#F4C400]/10 transition-colors duration-200 font-bold">
+          Ways to Support <i class="fas fa-arrow-right text-[10px]"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Custom scoped keyframe animations */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  /* Swiper dots custom color */
+  :global(.hero-slider .swiper-pagination-bullet) {
+    background: rgba(255, 255, 255, 0.45) !important;
+    opacity: 1 !important;
+  }
+  :global(.hero-slider .swiper-pagination-bullet-active) {
+    background: #38A84F !important;
+    transform: scale(1.2);
+  }
+
+  /* Reveal animation transition rules */
+  :global(.reveal) {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  :global(.reveal.visible) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
+
+  // Initialize Swiper Hero Slider
+  new Swiper('.hero-slider', {
+    modules: [Navigation, Pagination, Autoplay, EffectFade],
+    loop: true,
+    speed: 1200,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    autoplay: {
+      delay: 4500,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.hero-slider-next',
+      prevEl: '.hero-slider-prev',
+    },
+    pagination: {
+      el: '.hero-slider .swiper-pagination',
+      clickable: true,
+    },
+  });
+
+  // Reveal observer
+  const revealEls = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach((el) => obs.observe(el));
+
+  // Count animations
+  function animateCount(el: HTMLElement) {
+    const target = parseInt(el.dataset.target || '0');
+    const duration = 1400;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        el.textContent = target.toString();
+        clearInterval(timer);
+      } else {
+        el.textContent = Math.floor(current).toString();
+      }
+    }, 16);
+  }
+
+  // Count trigger observer
+  const statsInner = document.querySelector('.stats-inner');
+  if (statsInner) {
+    const statsObs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.count').forEach((countEl) => {
+            animateCount(countEl as HTMLElement);
+          });
+          statsObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.25 });
+    statsObs.observe(statsInner);
+  }
+</script>

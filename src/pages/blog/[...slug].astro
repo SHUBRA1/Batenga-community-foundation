@@ -1,0 +1,154 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+// Format date helper
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+};
+---
+
+<Layout title={`${entry.data.title} — Batenga Community Foundation`} activePage="blog">
+  <main class="max-w-[800px] mx-auto mt-28 px-4 pb-20">
+    <!-- Back to Blog Button -->
+    <div class="mb-8">
+      <a href="/blog" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/55 hover:text-[#38A84F] no-underline transition-colors duration-200">
+        <i class="fas fa-arrow-left text-[10px]"></i> Back to Blog
+      </a>
+    </div>
+
+    <!-- Article Header -->
+    <header class="mb-10">
+      <div class="flex flex-wrap gap-2 mb-4">
+        {entry.data.tags.map((tag) => (
+          <span class="bg-[#2A8B3C]/10 border border-[#2A8B3C]/20 text-[#38A84F] text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded">
+            {tag}
+          </span>
+        ))}
+      </div>
+      
+      <h1 class="font-serif text-3xl md:text-4.5xl font-black text-white leading-tight mb-6">
+        {entry.data.title}
+      </h1>
+
+      <div class="flex items-center gap-4 text-xs text-white/50 border-y border-white/5 py-4">
+        <div>
+          <span class="text-white/35 block uppercase text-[9px] tracking-wider font-semibold mb-0.5">Published On</span>
+          <strong class="text-white/70">{formatDate(entry.data.pubDate)}</strong>
+        </div>
+        <div class="w-px h-8 bg-white/10"></div>
+        <div>
+          <span class="text-white/35 block uppercase text-[9px] tracking-wider font-semibold mb-0.5">Written By</span>
+          <strong class="text-white/70">{entry.data.author}</strong>
+        </div>
+      </div>
+    </header>
+
+    <!-- Cover Image Block / Placeholder -->
+    <div class="relative bg-[#111] border border-white/5 rounded-md h-[240px] md:h-[360px] flex items-center justify-center overflow-hidden mb-12">
+      <div class="absolute inset-0 bg-gradient-to-tr from-[#2A8B3C]/10 to-[#F4C400]/5 z-0"></div>
+      <i class="fas fa-newspaper text-white/5 text-9xl absolute z-0"></i>
+      <div class="absolute inset-0 bg-black/45 z-[1]"></div>
+      <div class="relative z-10 text-center px-4">
+        <i class="fas fa-quote-left text-[#F4C400]/40 text-3xl mb-4"></i>
+        <p class="text-white/80 max-w-[520px] mx-auto text-sm italic font-serif leading-relaxed">
+          "{entry.data.description}"
+        </p>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <article class="article-content">
+      <Content />
+    </article>
+
+    <!-- Article Footer Share / Call to Action -->
+    <footer class="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="text-center sm:text-left">
+        <h4 class="font-serif font-bold text-white text-sm mb-1">Share this story</h4>
+        <p class="text-white/45 text-xs">Help raise awareness for our community programs.</p>
+      </div>
+      <div class="flex gap-2">
+        <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(entry.data.title)}&url=${encodeURIComponent(Astro.url.href)}`} target="_blank" rel="noopener" class="w-8 h-8 rounded bg-[#111] hover:bg-black text-white/70 hover:text-[#38A84F] border border-white/5 flex items-center justify-center text-xs transition-colors">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(Astro.url.href)}`} target="_blank" rel="noopener" class="w-8 h-8 rounded bg-[#111] hover:bg-[#1877F2] text-white/70 hover:text-white border border-white/5 flex items-center justify-center text-xs transition-colors">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href={`mailto:?subject=${encodeURIComponent(entry.data.title)}&body=${encodeURIComponent(Astro.url.href)}`} class="w-8 h-8 rounded bg-[#111] hover:bg-white/10 text-white/70 hover:text-white border border-white/5 flex items-center justify-center text-xs transition-colors">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  /* Premium custom article styles */
+  .article-content :global(h2) {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+  .article-content :global(h3) {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .article-content :global(p) {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+  .article-content :global(ul), .article-content :global(ol) {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.95rem;
+  }
+  .article-content :global(ul) {
+    list-style-type: disc;
+  }
+  .article-content :global(ol) {
+    list-style-type: decimal;
+  }
+  .article-content :global(li) {
+    margin-bottom: 0.5rem;
+    line-height: 1.65;
+  }
+  .article-content :global(a) {
+    color: #38A84F;
+    text-decoration: underline;
+    transition: color 0.2s;
+  }
+  .article-content :global(a:hover) {
+    color: #2A8B3C;
+  }
+  .article-content :global(strong) {
+    color: #fff;
+    font-weight: 600;
+  }
+</style>

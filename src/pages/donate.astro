@@ -1,0 +1,154 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Donate & Support — Batenga Community Foundation" activePage="donate">
+  <main class="max-w-[1080px] mx-auto mt-28 px-4 pb-20">
+    <!-- Hero Page Header -->
+    <header class="text-center mb-16 animate-fade-up">
+      <span class="text-[#38A84F] uppercase font-bold tracking-[0.2em] text-xs">Donate</span>
+      <h1 class="font-serif text-3xl md:text-5xl font-black mt-3 text-white leading-tight">Support Our Work</h1>
+      <div class="w-16 h-1 bg-[#2A8B3C] mx-auto mt-6 mb-6"></div>
+      <p class="text-white/70 max-w-[760px] mx-auto text-sm md:text-base leading-relaxed">
+        Your contributions directly fund housing construction, education sponsorships, water wells, and food relief in Uganda.
+      </p>
+    </header>
+
+    <!-- Impact Teaser Block (Premium Addition) -->
+    <section class="bg-[#111] border border-white/5 rounded-md p-8 mb-12 reveal">
+      <h2 class="font-serif font-bold text-xl text-white mb-4">Where Your Donation Goes</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-white/70 leading-relaxed mt-6">
+        <div>
+          <strong class="text-[#F4C400] text-lg block mb-1">UGX 5,000,000</strong>
+          <span class="text-xs">Builds a complete, secure brick home for a vulnerable widow and her children.</span>
+        </div>
+        <div class="w-full h-px sm:w-px sm:h-auto bg-white/10"></div>
+        <div>
+          <strong class="text-[#F4C400] text-lg block mb-1">School Fees Sponsorship</strong>
+          <span class="text-xs">Sponsors an orphaned child's primary or secondary education for an entire term, including materials.</span>
+        </div>
+        <div class="w-full h-px sm:w-px sm:h-auto bg-white/10"></div>
+        <div>
+          <strong class="text-[#F4C400] text-lg block mb-1">Water & Hygiene</strong>
+          <span class="text-xs">Funds water borehole construction and repair, bringing clean water access to entire rural villages.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donation Methods Grid -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 reveal">
+      <!-- DTB Card -->
+      <div class="bg-[#111] border border-white/5 rounded-md p-8">
+        <h3 class="font-serif font-bold text-xl text-[#F4C400] mb-6 flex items-center gap-3">
+          <i class="fas fa-building-columns text-base"></i> Bank Transfer Details
+        </h3>
+        <ul class="flex flex-col gap-4 text-xs md:text-sm text-white/70">
+          <li class="flex justify-between border-b border-white/5 pb-2">
+            <span>Account Name:</span>
+            <strong class="text-white text-right">Batenga Community Foundation</strong>
+          </li>
+          <li class="flex justify-between border-b border-white/5 pb-2">
+            <span>Bank:</span>
+            <strong class="text-white text-right">Diamond Trust Bank (DTB)</strong>
+          </li>
+          <li class="flex justify-between border-b border-white/5 pb-2">
+            <span>Account Number:</span>
+            <strong class="text-white text-right font-mono">5211932932</strong>
+          </li>
+          <li class="flex justify-between border-b border-white/5 pb-2">
+            <span>Sort Code:</span>
+            <strong class="text-white text-right font-mono">190147</strong>
+          </li>
+          <li class="flex justify-between border-b border-white/5 pb-2">
+            <span>Swift Code:</span>
+            <strong class="text-white text-right font-mono">DTKEUGKA</strong>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Airtel MM Card -->
+      <div class="bg-[#111] border border-white/5 rounded-md p-8">
+        <h3 class="font-serif font-bold text-xl text-[#F4C400] mb-6 flex items-center gap-3">
+          <i class="fas fa-mobile-screen-button text-base"></i> Mobile Money Merchant
+        </h3>
+        <ul class="flex flex-col gap-4 text-xs md:text-sm text-white/70">
+          <li class="flex justify-between border-b border-white/5 pb-2">
+            <span>Airtel Merchant Code:</span>
+            <strong class="text-white text-right font-mono">6009145</strong>
+          </li>
+          <li class="flex justify-between border-b border-white/5 pb-2">
+            <span>Phone Number:</span>
+            <strong class="text-white text-right font-mono">+256 704 177 150</strong>
+          </li>
+          <li class="flex justify-between border-b border-white/5 pb-2">
+            <span>Merchant Holder:</span>
+            <strong class="text-white text-right">Batenga Community Foundation</strong>
+          </li>
+          <li class="flex justify-between border-b border-white/5 pb-2">
+            <span>Payment Reference:</span>
+            <strong class="text-white text-right">Use "Donation" or your name</strong>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Verification / Inquiries Card -->
+    <section class="bg-[#2A8B3C]/5 border border-[#2A8B3C]/20 rounded-md p-6 md:p-8 reveal text-center max-w-[720px] mx-auto">
+      <h3 class="font-serif font-bold text-lg text-white mb-3">Verification & Receipt Inquiry</h3>
+      <p class="text-white/70 text-xs md:text-sm leading-relaxed mb-6">
+        To help us track and receipt your donation, please share a screenshot or details of your transaction via WhatsApp or Email.
+      </p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="mailto:info@batengafoundation.org?subject=Donation%20Receipt" class="bg-[#2A8B3C] text-white hover:bg-[#38A84F] px-6 py-2.5 rounded-[3px] text-xs font-bold uppercase tracking-wider no-underline transition-colors duration-200">
+          Email Receipt Details
+        </a>
+        <a href="https://wa.me/256704177150" target="_blank" rel="noopener" class="border border-white/20 text-white hover:border-[#38A84F] hover:text-[#38A84F] px-6 py-2.5 rounded-[3px] text-xs font-bold uppercase tracking-wider no-underline transition-all duration-200">
+          Share on WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  /* Reveal transition style */
+  :global(.reveal) {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  :global(.reveal.visible) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+</style>
+
+<script>
+  // Simple intersection observer for reveals
+  const revealEls = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach((el) => obs.observe(el));
+</script>

@@ -1,0 +1,240 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const featuredPost = posts[0];
+const secondaryPosts = posts.slice(1);
+
+// Formatting date helper
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+};
+---
+
+<Layout title="News & Stories — Batenga Community Foundation" activePage="blog">
+  <main class="max-w-[1080px] mx-auto mt-28 px-4 pb-20">
+    <!-- Hero Page Header -->
+    <header class="text-center mb-16 animate-fade-up">
+      <span class="text-[#38A84F] uppercase font-bold tracking-[0.2em] text-xs">Our Blog</span>
+      <h1 class="font-serif text-3xl md:text-5xl font-black mt-3 text-white leading-tight">News & Community Stories</h1>
+      <div class="w-16 h-1 bg-[#2A8B3C] mx-auto mt-6 mb-6"></div>
+      <p class="text-white/70 max-w-[760px] mx-auto text-sm md:text-base leading-relaxed">
+        Stay updated with recent milestones, event reports, stories of transformation, and volunteer features.
+      </p>
+    </header>
+
+    {posts.length === 0 ? (
+      <div class="text-center py-20 bg-[#111] border border-white/5 rounded-md">
+        <i class="fas fa-newspaper text-white/20 text-4xl mb-4"></i>
+        <p class="text-white/50 text-sm">No blog posts found. Check back soon!</p>
+      </div>
+    ) : (
+      <div>
+        <!-- Featured Post Section -->
+        {featuredPost && (
+          <section class="mb-16 reveal">
+            <div class="group relative bg-[#111] border border-white/5 hover:border-[#2A8B3C]/35 rounded-md overflow-hidden transition-all duration-300 grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-8">
+              <!-- Left: Cover (Or brand logo/placeholder if no image) -->
+              <div class="md:col-span-7 bg-[#1a1a1a] min-h-[260px] md:min-h-[380px] flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-tr from-[#2A8B3C]/10 to-[#F4C400]/5 z-0"></div>
+                <i class="fas fa-newspaper text-white/5 text-8xl absolute z-0"></i>
+                <div class="absolute inset-0 bg-black/40 z-[1]"></div>
+                <!-- Dynamic text styling to feel premium -->
+                <div class="absolute inset-0 p-8 flex flex-col justify-end z-10">
+                  <div class="flex flex-wrap gap-2 mb-3">
+                    {featuredPost.data.tags.map((tag) => (
+                      <span class="bg-[#2A8B3C]/20 border border-[#2A8B3C]/30 text-[#38A84F] text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <span class="text-white/50 text-xs font-medium block uppercase tracking-wider mb-2">
+                    Featured Article
+                  </span>
+                </div>
+              </div>
+
+              <!-- Right: Content Details -->
+              <div class="md:col-span-5 p-8 flex flex-col justify-between">
+                <div>
+                  <div class="text-white/40 text-[10px] md:text-xs font-bold tracking-wider uppercase flex items-center gap-2 mb-4">
+                    <span>{formatDate(featuredPost.data.pubDate)}</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#2A8B3C]"></span>
+                    <span>By {featuredPost.data.author}</span>
+                  </div>
+                  <h2 class="font-serif font-black text-xl md:text-2xl text-white mb-4 group-hover:text-[#38A84F] transition-colors duration-250 leading-snug">
+                    <a href={`/blog/${featuredPost.id}`} class="no-underline text-inherit">
+                      {featuredPost.data.title}
+                    </a>
+                  </h2>
+                  <p class="text-white/60 text-xs md:text-sm leading-relaxed mb-6">
+                    {featuredPost.data.description}
+                  </p>
+                </div>
+                <div>
+                  <a href={`/blog/${featuredPost.id}`} class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#38A84F] hover:text-[#2A8B3C] no-underline transition-colors">
+                    Read Article <i class="fas fa-arrow-right text-[10px]"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        <!-- Search / Tag filtering UI -->
+        <section class="mb-8 flex flex-wrap items-center justify-between gap-4 reveal">
+          <div class="relative w-full sm:max-w-xs">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-white/30">
+              <i class="fas fa-search text-xs"></i>
+            </span>
+            <input 
+              type="text" 
+              id="search-input" 
+              placeholder="Search posts..." 
+              class="w-full pl-9 pr-4 py-2 text-xs bg-[#111] border border-white/5 rounded text-white focus:outline-none focus:border-[#2A8B3C] placeholder-white/35 transition-colors"
+            />
+          </div>
+
+          <!-- Quick tags filter -->
+          <div class="flex flex-wrap gap-2" id="tags-container">
+            <button class="tag-filter-btn active bg-[#2A8B3C] text-white px-3 py-1 rounded text-[11px] font-bold uppercase tracking-wider border border-[#2A8B3C] transition-all cursor-pointer" data-tag="all">
+              All Posts
+            </button>
+            {Array.from(new Set(posts.flatMap(p => p.data.tags))).map(tag => (
+              <button class="tag-filter-btn bg-black/40 text-white/60 hover:text-white px-3 py-1 rounded text-[11px] font-bold uppercase tracking-wider border border-white/5 hover:border-white/10 transition-all cursor-pointer" data-tag={tag}>
+                {tag}
+              </button>
+            ))}
+          </div>
+        </section>
+
+        <!-- Secondary Grid Section -->
+        {secondaryPosts.length > 0 && (
+          <section class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal" id="posts-grid">
+            {secondaryPosts.map((post) => (
+              <article class="post-card group bg-[#111] border border-white/5 hover:border-[#2A8B3C]/35 rounded-md overflow-hidden transition-all duration-300 flex flex-col justify-between" data-tags={post.data.tags.join(',')}>
+                <div class="p-8">
+                  <div class="flex flex-wrap gap-1.5 mb-4">
+                    {post.data.tags.map((tag) => (
+                      <span class="bg-black/25 text-white/50 text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border border-white/5">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div class="text-white/40 text-[10px] font-bold tracking-wider uppercase flex items-center gap-2 mb-3">
+                    <span>{formatDate(post.data.pubDate)}</span>
+                    <span class="w-1 h-1 rounded-full bg-[#2A8B3C]/50"></span>
+                    <span>By {post.data.author}</span>
+                  </div>
+                  <h3 class="post-title font-serif font-bold text-lg text-white mb-3 group-hover:text-[#38A84F] transition-colors duration-250 leading-snug">
+                    <a href={`/blog/${post.id}`} class="no-underline text-inherit">
+                      {post.data.title}
+                    </a>
+                  </h3>
+                  <p class="text-white/65 text-xs md:text-sm leading-relaxed line-clamp-3">
+                    {post.data.description}
+                  </p>
+                </div>
+                <div class="px-8 pb-8">
+                  <a href={`/blog/${post.id}`} class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#38A84F] hover:text-[#2A8B3C] no-underline transition-colors">
+                    Read Article <i class="fas fa-arrow-right text-[10px]"></i>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </section>
+        )}
+      </div>
+    )}
+  </main>
+</Layout>
+
+<style>
+  /* Reveal transition style */
+  :global(.reveal) {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  :global(.reveal.visible) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+</style>
+
+<script>
+  // Simple intersection observer for reveals
+  const revealEls = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach((el) => obs.observe(el));
+
+  // Client-side search and tag filtering
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const tagBtns = document.querySelectorAll('.tag-filter-btn');
+  const postCards = document.querySelectorAll('.post-card');
+  let activeTag = 'all';
+
+  function filterPosts() {
+    const query = searchInput?.value.toLowerCase() || '';
+    postCards.forEach((card) => {
+      const el = card as HTMLElement;
+      const title = el.querySelector('.post-title')?.textContent?.toLowerCase() || '';
+      const tags = el.dataset.tags?.split(',') || [];
+      const matchesSearch = title.includes(query);
+      const matchesTag = activeTag === 'all' || tags.includes(activeTag);
+
+      if (matchesSearch && matchesTag) {
+        el.style.display = 'flex';
+      } else {
+        el.style.display = 'none';
+      }
+    });
+  }
+
+  searchInput?.addEventListener('input', filterPosts);
+
+  tagBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      tagBtns.forEach((b) => {
+        b.classList.remove('active', 'bg-[#2A8B3C]', 'border-[#2A8B3C]');
+        b.classList.add('bg-black/40', 'text-white/60', 'border-white/5');
+      });
+      const target = e.currentTarget as HTMLButtonElement;
+      target.classList.add('active', 'bg-[#2A8B3C]', 'border-[#2A8B3C]');
+      target.classList.remove('bg-black/40', 'text-white/60', 'border-white/5');
+      activeTag = target.dataset.tag || 'all';
+      filterPosts();
+    });
+  });
+</script>

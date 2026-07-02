@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact & Support — Batenga Community Foundation" activePage="contact">
+  <main class="max-w-[1200px] mx-auto mt-28 px-4 pb-20">
+    <!-- Page Header -->
+    <header class="text-center mb-12">
+      <span class="text-[#38A84F] uppercase font-bold tracking-[0.2em] text-xs">Get In Touch</span>
+      <h1 class="font-serif text-3xl md:text-5xl font-black mt-3 text-white leading-tight">Contact Batenga Foundation</h1>
+      <div class="w-16 h-1 bg-[#2A8B3C] mx-auto mt-6 mb-6"></div>
+      <p class="text-white/70 max-w-[760px] mx-auto text-sm md:text-base leading-relaxed">
+        Have questions about our programs, sponsorships, or wish to partner with us? Reach out directly using the form below or connect through our official channels.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- Contact Form Column -->
+      <section class="lg:col-span-7 bg-[#111] border border-white/5 rounded-md p-6 md:p-8 shadow-xl">
+        <h2 class="font-serif text-xl font-bold text-white mb-6 flex items-center gap-3">
+          <i class="fas fa-paper-plane text-sm text-[#38A84F]"></i> Send a Message
+        </h2>
+        
+        <form class="flex flex-col gap-6" onsubmit="event.preventDefault(); alert('Thank you for contacting us. We will get back to you shortly.'); this.reset();">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="flex flex-col gap-1.5">
+              <label for="name" class="text-white/50 text-[10px] font-bold tracking-wider uppercase">Full Name</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required 
+                placeholder="Enter your name" 
+                class="bg-black/30 border border-white/10 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-[#2A8B3C] focus:ring-1 focus:ring-[#2A8B3C] transition-all placeholder-white/30"
+              />
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="email" class="text-white/50 text-[10px] font-bold tracking-wider uppercase">Email Address</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required 
+                placeholder="Enter your email" 
+                class="bg-black/30 border border-white/10 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-[#2A8B3C] focus:ring-1 focus:ring-[#2A8B3C] transition-all placeholder-white/30"
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label for="subject" class="text-white/50 text-[10px] font-bold tracking-wider uppercase">Subject</label>
+            <input 
+              type="text" 
+              id="subject" 
+              name="subject" 
+              required 
+              placeholder="How can we help you?" 
+              class="bg-black/30 border border-white/10 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-[#2A8B3C] focus:ring-1 focus:ring-[#2A8B3C] transition-all placeholder-white/30"
+            />
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label for="message" class="text-white/50 text-[10px] font-bold tracking-wider uppercase">Message</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="6" 
+              required 
+              placeholder="Type your message here..." 
+              class="bg-black/30 border border-white/10 rounded px-4 py-3 text-white text-sm focus:outline-none focus:border-[#2A8B3C] focus:ring-1 focus:ring-[#2A8B3C] transition-all placeholder-white/30 resize-y"
+            ></textarea>
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full sm:w-auto self-start bg-[#2A8B3C] hover:bg-[#38A84F] text-white py-3.5 px-8 uppercase tracking-wider text-xs font-bold transition-all rounded-[3px] shadow-lg shadow-[#2A8B3C]/10 border-0 cursor-pointer"
+          >
+            Send Message
+          </button>
+        </form>
+      </section>
+
+      <!-- Info Cards Column -->
+      <aside class="lg:col-span-5 flex flex-col gap-6">
+        <!-- Quick Contacts & Social Card -->
+        <section class="bg-[#111] border border-white/5 rounded-md p-6 md:p-8 shadow-xl">
+          <h2 class="font-serif text-xl font-bold text-white mb-6 flex items-center gap-3">
+            <i class="fas fa-address-card text-sm text-[#38A84F]"></i> Office Contacts
+          </h2>
+
+          <div class="flex flex-col gap-4 text-xs md:text-sm text-white/70 mb-6">
+            <div class="flex items-start gap-3">
+              <i class="fas fa-location-dot text-[#38A84F] text-base mt-0.5 w-5 text-center"></i>
+              <div>
+                <strong class="text-white">Office Location:</strong>
+                <p class="mt-1 leading-relaxed">Nansana East II, Nansana Town Council, Wakiso District, Uganda</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fas fa-envelope text-[#38A84F] text-base w-5 text-center"></i>
+              <div>
+                <strong class="text-white">Email Address:</strong>
+                <p class="mt-0.5"><a href="mailto:info@batengafoundation.org" class="underline hover:text-[#38A84F] transition-colors">info@batengafoundation.org</a></p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fas fa-phone-volume text-[#38A84F] text-base w-5 text-center"></i>
+              <div>
+                <strong class="text-white">Phone & WhatsApp:</strong>
+                <p class="mt-0.5"><a href="tel:+256704177150" class="underline hover:text-[#38A84F] transition-colors">+256 704 177 150</a></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="border-t border-white/5 pt-6">
+            <p class="text-white/40 text-[10px] font-bold tracking-wider uppercase mb-3">Find us on Social Media</p>
+            <div class="flex flex-wrap gap-2">
+              <a href="https://www.youtube.com/@konoowekayouthprogram2564" target="_blank" rel="noopener" aria-label="YouTube Channel" class="flex items-center justify-center w-9 h-9 rounded bg-white/5 border border-white/10 text-white hover:bg-[#FF0000] hover:border-[#FF0000] transition-all">
+                <i class="fab fa-youtube text-sm"></i>
+              </a>
+              <a href="https://www.facebook.com/Konooweka" target="_blank" rel="noopener" aria-label="Facebook Page" class="flex items-center justify-center w-9 h-9 rounded bg-white/5 border border-white/10 text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all">
+                <i class="fab fa-facebook-f text-sm"></i>
+              </a>
+              <a href="https://x.com/BATENGAFO" target="_blank" rel="noopener" aria-label="X (formerly Twitter) Account" class="flex items-center justify-center w-9 h-9 rounded bg-white/5 border border-white/10 text-white hover:bg-white hover:text-black hover:border-white transition-all">
+                <i class="fab fa-x-twitter text-sm"></i>
+              </a>
+              <a href="https://www.instagram.com/batengafoundation/" target="_blank" rel="noopener" aria-label="Instagram Page" class="flex items-center justify-center w-9 h-9 rounded bg-white/5 border border-white/10 text-white hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:border-transparent transition-all">
+                <i class="fab fa-instagram text-sm"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Donation details card -->
+        <section class="bg-[#111] border border-white/5 rounded-md p-6 md:p-8 shadow-xl">
+          <h2 class="font-serif text-xl font-bold text-white mb-6 flex items-center gap-3">
+            <i class="fas fa-hand-holding-heart text-sm text-[#38A84F]"></i> Donations & Support
+          </h2>
+          
+          <div class="flex flex-col gap-6 text-xs md:text-sm text-white/70">
+            <div>
+              <h4 class="font-serif font-bold text-sm text-[#F4C400] mb-2 flex items-center gap-2">
+                <i class="fas fa-building-columns text-xs"></i> Bank Transfer
+              </h4>
+              <ul class="flex flex-col gap-1 text-white/60">
+                <li>Account Name: <span class="text-white">Batenga Community Foundation</span></li>
+                <li>Bank: <span class="text-white">Diamond Trust Bank</span></li>
+                <li>Account Number: <span class="text-white font-semibold">5211932932</span></li>
+                <li>Sort Code: <span class="text-white">190147</span></li>
+                <li>Swift Code: <span class="text-white">DTKEUGKA</span></li>
+              </ul>
+            </div>
+
+            <div class="h-px bg-white/5"></div>
+
+            <div>
+              <h4 class="font-serif font-bold text-sm text-[#F4C400] mb-2 flex items-center gap-2">
+                <i class="fas fa-mobile-screen-button text-xs"></i> Mobile Money
+              </h4>
+              <ul class="flex flex-col gap-1 text-white/60">
+                <li>Airtel Merchant Code: <span class="text-white font-semibold">6009145</span></li>
+                <li>Phone Number: <span class="text-white">+256 704 177 150</span></li>
+                <li>Holder Name: <span class="text-white">Batenga Community Foundation</span></li>
+                <li>Reference: <span class="text-white">Use "Donation" or your name</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+</Layout>
